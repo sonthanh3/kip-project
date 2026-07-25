@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5433/kip
+    username: postgres
+    password: kip_pass
+    driver-class-name: org.postgresql.Driver
+  security:
+    user:
+      name: disabled
+      password: disabled
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8081
+
+kipper:
+  claude:
+    api-key: ${CLAUDE_API_KEY}
+    url: https://api.anthropic.com/v1/messages

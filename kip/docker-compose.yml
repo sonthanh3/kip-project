@@ -1,0 +1,14 @@
+services:
+  kip-db:
+    image: postgres:16
+    container_name: kip-postgres
+    environment:
+      POSTGRES_DB: kip
+      POSTGRES_PASSWORD: kip_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - kip-db-data:/var/lib/postgresql/data
+
+volumes:
+  kip-db-data:

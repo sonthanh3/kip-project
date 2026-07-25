@@ -1,0 +1,50 @@
+services:
+  mockbank-db:
+    image: postgres:16
+    container_name: mockbank-postgres
+    environment:
+      POSTGRES_DB: mockbank
+      POSTGRES_PASSWORD: mockbank_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - mockbank-db-data:/var/lib/postgresql/data
+
+  kip-db:
+    image: postgres:16
+    container_name: kip-postgres
+    environment:
+      POSTGRES_DB: kip
+      POSTGRES_PASSWORD: kip_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - kip-db-data:/var/lib/postgresql/data
+
+  mockbank:
+    build:
+      context: ./mockbank/mockbank
+    container_name: mockbank-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mockbank-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://mockbank-db:5432/mockbank
+      SPRING_DATASOURCE_PASSWORD: mockbank_pass
+
+  kip:
+    build:
+      context: ./kip/kip
+    container_name: kip-app
+    ports:
+      - "8081:8081"
+    depends_on:
+      - kip-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://kip-db:5432/kip
+      SPRING_DATASOURCE_PASSWORD: kip_pass
+
+volumes:
+  mockbank-db-data:
+  kip-db-data:

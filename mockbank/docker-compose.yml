@@ -1,0 +1,14 @@
+services:
+  mockbank-db:
+    image: postgres:16
+    container_name: mockbank-postgres
+    environment:
+      POSTGRES_DB: mockbank
+      POSTGRES_PASSWORD: mockbank_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - mockbank-db-data:/var/lib/postgresql/data
+
+volumes:
+  mockbank-db-data:
