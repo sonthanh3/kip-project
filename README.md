@@ -2,6 +2,9 @@
 
 A personal finance tool designed for someone rebuilding their financial life after bankruptcy. Calm, factual, no shame-based UX, no debt products — just clarity on what actually happened to your money and what's safe to spend today.
 
+## Demo
+[Watch the demo video](https://youtu.be/P8Vru4Q7018)
+
 ## Why this exists
 
 Bankruptcy usually traces back to poor money visibility, not just poor decisions. Kip's job is to make that visibility effortless: one honest number for what's safe to spend, a weekly summary of where money went, and a neutral AI companion (Kipper) that reflects spending patterns back without judgment.
