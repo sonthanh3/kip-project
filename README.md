@@ -1,6 +1,6 @@
 # Kip — Keep Track
 
-A personal finance tool designed for someone rebuilding their financial life after bankruptcy. Calm, factual, no shame-based UX, no debt products — just clarity on what actually happened to your money and what's safe to spend today.
+A personal finance tool designed for someone rebuilding their financial life after financial hardship. Calm, factual, no shame-based UX, no debt products — just clarity on what actually happened to your money and what's safe to spend today.
 
 ## Demo
 [Watch the demo video](https://youtu.be/P8Vru4Q7018)
